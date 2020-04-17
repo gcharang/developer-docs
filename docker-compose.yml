@@ -1,12 +1,14 @@
-app:
-  build: .
-  ports:
-    - 8080:8080
-  volumes:
-    - .:/app/
-  container_name: komodo_docs
-  user: "1000:1000"
-  command:
-    - ./algolia-key.sh
-    - yarn install && yarn docs:build && tail -f /dev/null/
-  stdin_open: true
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Vuepress-dev.Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/app/
+    container_name: komodo_docs
+    user: "1000:1000"
+    stdin_open: true
