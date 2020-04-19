@@ -17,6 +17,7 @@ if [ "$TRAVIS_BRANCH" == "developer-docs-test" ]; then
     sudo apt-get update
     sudo apt-get install gcc-9 g++-9
     sudo apt install python3-pip python3-sphinx
+    sudo apt install libboost-chrono-dev libboost-date-time-dev libboost-regex-dev libboost-system-dev libboost-thread-dev libboost-random-dev libboost-filesystem-dev
     pip3 install setuptools
     pip3 install wheel
     pip3 install breathe
