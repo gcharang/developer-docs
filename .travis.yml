@@ -18,21 +18,21 @@ script:
 #  - ./prepare-atomicDEX-docs.sh # modify the script to only run on master
 
 deploy:
-  - provider: pages
-    skip-cleanup: true
-    github-token: "$GH_TOKEN"
-    local-dir: docs/.vuepress/dist/
-    repo: komodoplatform/developer-docs
-    on:
-      branch: master
-  - provider: pages
-    skip-cleanup: true
-    github-token: "$GH_TOKEN"
-    local-dir: AtomicDEX-docs
-    target_branch: master
-    repo: komodoplatform/AtomicDEX-docs
-    on:
-      branch: master
+  #  - provider: pages
+  #    skip-cleanup: true
+  #    github-token: "$GH_TOKEN"
+  #    local-dir: docs/.vuepress/dist/
+  #    repo: komodoplatform/developer-docs
+  #    on:
+  #      branch: master
+  #  - provider: pages
+  #    skip-cleanup: true
+  #    github-token: "$GH_TOKEN"
+  #    local-dir: AtomicDEX-docs
+  #    target_branch: master
+  #    repo: komodoplatform/AtomicDEX-docs
+  #    on:
+  #      branch: master
   - provider: pages
     skip-cleanup: true
     github-token: "$GH_TOKEN"
