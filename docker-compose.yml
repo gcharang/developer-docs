@@ -11,5 +11,3 @@ services:
       - .:/app/
     container_name: komodo_docs
     user: "1000:1000"
-    command: tail -f /dev/null
-    stdin_open: true

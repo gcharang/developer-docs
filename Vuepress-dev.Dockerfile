@@ -6,4 +6,4 @@ RUN mkdir -p /app/
 
 WORKDIR /app/
 
-ENTRYPOINT yarn install && yarn docs:dev
+ENTRYPOINT [ "./entrypoint.sh" ]

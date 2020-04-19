@@ -2,7 +2,7 @@
 
 Komodo documentation uses [Vuepress](https://vuepress.vuejs.org/).
 
-## Setup:
+## Setup
 
 Prerequisites:
   * nodejs
@@ -58,7 +58,7 @@ To deploy to gh-pages at `https://<USERNAME>.github.io/developer-docs`
 
 The above script uses your **git** `<USERNAME>` from the global git configuration of your system.
 
-## Using Docker:
+## Using Docker
 
 You can use Docker to reliably produce a developer environment that won't conflict with any of your existing projects.
 
@@ -69,7 +69,7 @@ You can use Docker to reliably produce a developer environment that won't confli
 
 * To start developing, simply issue `docker-compose up` in a terminal to launch the container
 * Then do `docker exec -ti komodo_docs /bin/sh` in another terminal to access a terminal inside the container. Now simply follow the instructions detailed in the above `Start Editing` and `Build` sections.
-* To exit from the terminal from the container use the `exit` command.
+* To exit the terminal launched in the container use the `exit` command.
 * Use `CTRL + C` in the terminal `docker-compose up` has been done to stop the container.
-* To deploy using docker, use the command `./deploy_docker.sh`. This script deploys to your own fork; the webpages are now located at the following address: `https://<USERNAME>.github.io/developer-docs`
+* To deploy using docker, use the command `./deploy_docker.sh`. This script deploys to your own fork; the webpages will be located at the following url: `https://<USERNAME>.github.io/developer-docs`
 * When used for the first time, Docker might take some time to download the required data and build an image. Subsequent usage will be faster.
