@@ -56,6 +56,7 @@ if [ "$TRAVIS_BRANCH" == "developer-docs-test" ]; then
     make
     cd my_src
     ./komodo-doxybook2
+    cd $TRAVIS_BUILD_DIR
     ls docs/basic-docs/antara-gaming-sdk/
     cat docs/.vuepress/gaming-sdk-sidebar.js
 fi
