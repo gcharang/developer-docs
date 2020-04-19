@@ -102,7 +102,7 @@ mkdir -p doxy/build/
 
 ## Create md files from the xml output of doxygen using Doxybook2
 
-```
+```bash
 cd doxy
 ./submodules/doxybook2/build/src/DoxybookCli/doxybook2 --input submodules/antara-gaming-sdk/build/docs/doxygen/xml/ --output outputDir/ --templates ./templates/
 ```
