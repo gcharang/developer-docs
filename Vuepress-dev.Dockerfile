@@ -6,4 +6,4 @@ RUN mkdir -p /app/
 
 WORKDIR /app/
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+ENTRYPOINT [ "./entrypoint-vuepress-dev.sh" ]
