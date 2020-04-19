@@ -17,7 +17,11 @@ if [ "$TRAVIS_BRANCH" == "developer-docs-test" ]; then
     sudo apt-get update
     sudo apt-get install gcc-9 g++-9
     sudo apt install python3-pip python3-sphinx
-    pip3 install setuptools wheel breathe sphinxemoji m2r
+    pip3 install setuptools
+    pip3 install wheel
+    pip3 install breathe
+    pip3 install sphinxemoji
+    pip3 install m2r
     cd $TRAVIS_BUILD_DIR
     git submodule update --init --recursive
     cd doxy/submodules/antara-gaming-sdk/
