@@ -4,10 +4,10 @@ if [ "$TRAVIS_BRANCH" == "developer-docs-test" ]; then
     sudo apt-get install doxygen
     sudo apt purge --auto-remove cmake
     cd ~
-    wget https://github.com/Kitware/CMake/releases/download/v3.16.5/cmake-3.16.5-Linux-x86_64.sh
-    chmod +x cmake-3.16.5-Linux-x86_64.sh
-    ./cmake-3.16.5-Linux-x86_64.sh --skip-license
-    sudo ln -s ~/cmake-3.16.5-Linux-x86_64/bin/cmake /usr/local/bin/cmake
+    wget https://github.com/Kitware/CMake/releases/download/v3.17.1/cmake-3.17.1-Linux-x86_64.sh
+    chmod +x cmake-3.17.1-Linux-x86_64.sh
+    ./cmake-3.17.1-Linux-x86_64.sh --skip-license
+    sudo ln -s ~/cmake-3.17.1-Linux-x86_64/bin/cmake /usr/local/bin/cmake
     wget https://apt.llvm.org/llvm.sh
     chmod +x llvm.sh
     sudo ./llvm.sh 9
