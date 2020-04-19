@@ -33,6 +33,7 @@ Set the recently installed clang version to be used
 sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-9 100
 sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-9 100
 ```
+
 Install gcc-9 and g++-9
 
 ```bash

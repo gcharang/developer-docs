@@ -1,3 +1,4 @@
 [submodule "doxy/submodules/antara-gaming-sdk"]
-	path = doxy/submodules/antara-gaming-sdk
-	url = https://github.com/KomodoPlatform/antara-gaming-sdk
+path = doxy/submodules/antara-gaming-sdk
+url = https://github.com/KomodoPlatform/antara-gaming-sdk
+ignore = dirty
