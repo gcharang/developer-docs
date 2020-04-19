@@ -10,7 +10,7 @@ services:
   - docker
 script:
   - ./build-antara-gaming-sdk-docs.sh
-  - docker build -t komodo_docs_image - Vuepress.Dockerfile
+  - docker build -t komodo_docs_image - < Vuepress.Dockerfile
   - docker run --rm -v $(pwd):/app/ -w /app/ -u $(id -u):$(id -g) -e ALGOLIAKEY=$ALGOLIAKEY komodo_docs_image
   - cd docs/.vuepress/dist/
 #  - echo 'developers.komodoplatform.com' > CNAME
