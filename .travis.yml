@@ -1,4 +1,10 @@
-dist: xenial
+dist: bionic
+#addons:
+#  apt:
+#    sources:
+#      - docker-bionic
+#    packages:
+#      - docker
 sudo: required
 services:
   - docker
