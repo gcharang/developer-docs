@@ -2,3 +2,11 @@
 path = doxy/submodules/antara-gaming-sdk
 url = https://github.com/KomodoPlatform/antara-gaming-sdk
 ignore = dirty
+[submodule "doxy/submodules/doxybook2"]
+path = doxy/submodules/doxybook2
+url = https://github.com/siddhartha-crypto/doxybook2
+ignore = dirty
+[submodule "doxy/submodules/developer-docs"]
+path = doxy/submodules/developer-docs
+url = https://github.com/KomodoPlatform/developer-docs
+ignore = dirty
