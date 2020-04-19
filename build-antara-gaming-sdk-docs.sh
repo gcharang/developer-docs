@@ -1,7 +1,9 @@
 #!/bin/bash
 
 if [ "$TRAVIS_BRANCH" == "developer-docs-test" ]; then
-    sudo apt-get install doxygen
+    sudo add-apt-repository ppa:jonathonf/gcc-9.0 -y
+    sudo apt-get update -y
+    sudo apt-get install -y doxygen
     sudo apt purge --auto-remove cmake
     cd ~
     wget https://github.com/Kitware/CMake/releases/download/v3.17.1/cmake-3.17.1-Linux-x86_64.sh
@@ -13,8 +15,6 @@ if [ "$TRAVIS_BRANCH" == "developer-docs-test" ]; then
     sudo ./llvm.sh 9
     sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-9 100
     sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-9 100
-    sudo add-apt-repository ppa:jonathonf/gcc-9.0 -y
-    sudo apt-get update
     sudo apt-get install gcc-9 g++-9
     sudo apt install python3-pip python3-sphinx
     sudo apt install libboost-chrono-dev libboost-date-time-dev libboost-regex-dev libboost-system-dev libboost-thread-dev libboost-random-dev libboost-filesystem-dev
