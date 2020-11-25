@@ -35,8 +35,8 @@ jobs:
         BUILD_DIR: docs/.vuepress/dist/
 
     - name: Deploy updated files to atomicdex-docs
-      uses: gcharang/github-pages-deploy-action@master
-      with:
+      uses: gcharang/github-pages-deploy-action@3.7.1
+      env:
         ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
         REPOSITORY_NAME: ${{ github.repository_owner }}/AtomicDEX-docs
         BRANCH: master
