@@ -38,6 +38,7 @@ jobs:
       uses: gcharang/github-pages-deploy-action@3.7.1
       env:
         ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
+      with:  
         REPOSITORY_NAME: ${{ github.repository_owner }}/AtomicDEX-docs
         BRANCH: master
         FOLDER: AtomicDEX-docs
