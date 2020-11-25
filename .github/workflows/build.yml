@@ -35,10 +35,9 @@ jobs:
         BUILD_DIR: docs/.vuepress/dist/
 
     - name: Deploy updated files to atomicdex-docs
-      uses: KomodoPlatform/vuepress-deploy@master
-      env:
+      uses: gcharang/github-pages-deploy-action@master
+      with:
         ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
-        TARGET_REPO: ${{ github.repository_owner }}/AtomicDEX-docs
-        TARGET_BRANCH: master
-        BUILD_SCRIPT: rm -rf AtomicDEX-docs/.git
-        BUILD_DIR: AtomicDEX-docs
+        REPOSITORY_NAME: ${{ github.repository_owner }}/AtomicDEX-docs
+        BRANCH: master
+        FOLDER: AtomicDEX-docs
