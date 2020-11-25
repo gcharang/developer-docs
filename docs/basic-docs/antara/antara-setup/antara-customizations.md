@@ -511,10 +511,10 @@ The feed is differentiated from the previous feed by the `customlib` key, which 
 | "substitutes" | (optional, array of strings)           | a list of strings to substitute '%s' symbols in the `url` parameter to create requests; this supposes that each request returns a single value. If there is no `substitutes` key array in the configuration, then a poll may return many values                                                                  | `"substitutes":["XAU","XPT"]`                                                                                          |
 | "quote"       | (optional, string)                     | the string to be added to each string in the `substitutes` parameter to form a symbol of a currency pair, such as ``"USD_BTC"`, to represent the price data retreived from the feed                                                                                                                 | `"quote":"BTC"`                                                                                                        |
 | "customlib"   | (optional, string)                     | the name of the custom-parser library                                                                                                                                                                                                                                                             | `"customlib": "libmyparser.so"`                                                                                        |
-| "results"     | (mandatory, json object or json array) | contains parameters to parse the json response from the web api; this is an **object** if the parameter `substitutes` is present (in this case, the substitute is applied to the response from each poll, thus making the response arrive at one value <!-- Sidd: i'm not sure I understood all of this -->). Otherwise, the value is an **array** (this event allows for the retrieval of several values from the response). | see the structure and examples in the succeeding tables                                                                |
+| "results"     | (mandatory, json object or json array) | contains parameters to parse the json response from the web api; this is an **object** if the parameter `substitutes` is present (in this case, the substitute is applied to the response from each poll, thus making the response arrive at one value ). Otherwise, the value is an **array** (this event allows for the retrieval of several values from the response). | see the structure and examples in the succeeding tables                                                                |
 | "multiplier"  | (optional, number)                     | an integer multiplier that indicates the value by which the result(s) should be multiplied to create an integer; the default value is `1`                                                                                                                                                                                                                           | for forex prices, `"multiplier":10000` <br><br> for cryptocurrencies, `"multiplier":100000000`                         |
 | "interval"    | (optional, number)                     | the poll interval, given in seconds; this value should be greater than or equal to `120`; the default value is `120`                                                                                                                                                                                                      | `"interval":180`                                                                                                       |
-
+<!-- Sidd: i'm not sure I understood all of this re: results parameter -->
 #### Results Array Members
 
 | Name           | Type                         | Description                                                                                                                                                                                                           | Example                                            |
@@ -604,7 +604,7 @@ Use `ac_pubkey` to send the founder's reward to a normal address.
 
 Use `ac_script` to send the founder's reward to a multi-signature address.
 
-Set `ac_founders=1` to stay compatible with most stratum implementations. Any other value requires team member @blackjok3r's fork of knomp using the [disable-cb feature](https://github.com/blackjok3rtt/knomp#disable-coinbase-mode). Please reach out to our team on [discord](https://komodoplatform.com/discord) if you have further questions about how to set up a stratum.
+Set `ac_founders=1` to stay compatible with most stratum implementations. Any other value requires team member `Blackjok3r`'s modifications to knomp using the [disable-cb feature](https://github.com/webworker01/knomp#disable-coinbase-mode). Please reach out to our team on [discord](https://komodoplatform.com/discord) if you have further questions about how to set up a stratum.
 
 ## ac_founders_reward
 
@@ -721,7 +721,7 @@ For example, if `-ac_reward=100000000` and `-ac_perc=10000000`, for each block m
 The maximum amount of coins created via this method across all transactions per block is capped at `(1000000 * <percentage>)`.
 
 ::: tip
-Vout 1 of each coinbase transaction must be the correct amount sent to the corresponding pubkey. This only affects a miner trying to use a stratum. Team member, [Blackjok3r](https://github.com/blackjok3rtt/), developed a coinbase-override method for this purpose. Please see [this repo](https://github.com/blackjok3rtt/knomp#disable-coinbase-mode) for details.
+Vout 1 of each coinbase transaction must be the correct amount sent to the corresponding pubkey. This only affects a miner trying to use a stratum. Team member, `Blackjok3r`, developed a coinbase-override method for this purpose. Please see [this repo](https://github.com/webworker01/knomp/#disable-coinbase-mode) for details.
 :::
 
 #### ac_perc with ac_founders
