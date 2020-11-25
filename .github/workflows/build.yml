@@ -24,13 +24,14 @@ jobs:
       run: ./algolia-key.sh && ./prepare-atomicDEX-docs.sh
 
     - name: Build and Deploy to gh_pages
-      uses: KomodoPlatform/vuepress-deploy@master
+      uses: gcharang/vuepress-deploy@master
       env:
-        ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
         ALGOLIA_SECRET: ${{secrets.ALGOLIA_SECRET}}
         TARGET_REPO: ${{ github.repository }}
         TARGET_BRANCH: gh_pages
-        BUILD_SCRIPT: yarn && yarn docs:build && echo 'developers.test.com' > docs/.vuepress/dist/CNAME 
+        CNAME: "developers.gcharang.com"
+        BUILD_SCRIPT: yarn && yarn docs:build
         BUILD_DIR: docs/.vuepress/dist/
 
     - name: Deploy updated files to atomicdex-docs
