@@ -24,7 +24,7 @@ jobs:
       run: ./algolia-key.sh && ./prepare-atomicDEX-docs.sh
 
     - name: Build and Deploy to gh_pages
-      uses: gcharang/vuepress-deploy@master
+      uses: KomodoPlatform/vuepress-deploy@master
       env:
         ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
         ALGOLIA_SECRET: ${{secrets.ALGOLIA_SECRET}}
