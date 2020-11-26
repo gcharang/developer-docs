@@ -21,7 +21,7 @@ jobs:
     - name: Add Algolia Secret
       env:
         ALGOLIA_SECRET: ${{secrets.ALGOLIA_SECRET}}
-      run: ./algolia-key.sh
+      run: ls && pwd && ./algolia-key.sh && tree
 
     - name: Build and Deploy to gh_pages
       uses: KomodoPlatform/vuepress-deploy@master
@@ -43,7 +43,8 @@ jobs:
       uses: gcharang/github-pages-deploy-action@3.7.1
       env:
         ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
-      with:  
+      with:
+        ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}  
         REPOSITORY_NAME: ${{ github.repository_owner }}/AtomicDEX-docs
         BRANCH: master
         FOLDER: AtomicDEX-docs
