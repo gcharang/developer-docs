@@ -18,10 +18,10 @@ jobs:
         repository: ${{ github.repository_owner }}/AtomicDEX-docs
         path: AtomicDEX-docs    
 
-    - name: Prepare the directory
+    - name: Add Algolia Secret
       env:
         ALGOLIA_SECRET: ${{secrets.ALGOLIA_SECRET}}
-      run: ./algolia-key.sh && ./prepare-atomicDEX-docs.sh
+      run: ./algolia-key.sh
 
     - name: Build and Deploy to gh_pages
       uses: KomodoPlatform/vuepress-deploy@master
@@ -33,6 +33,11 @@ jobs:
         CNAME: "developers.gcharang.com"
         BUILD_SCRIPT: yarn && yarn docs:build
         BUILD_DIR: docs/.vuepress/dist/
+   
+    - name: Prepare AtomicDEX docs
+      env:
+        ALGOLIA_SECRET: ${{secrets.ALGOLIA_SECRET}}
+      run: ./prepare-atomicDEX-docs.sh
 
     - name: Deploy updated files to atomicdex-docs
       uses: gcharang/github-pages-deploy-action@3.7.1
