@@ -39,7 +39,7 @@ jobs:
         ALGOLIA_SECRET: ${{secrets.ALGOLIA_SECRET}}
       run: ./prepare-atomicDEX-docs.sh
 
-    - name: Deploy updated files to atomicdex-docs
+    - name: Deploy updated files to AtomicDEX-docs repo
       uses: gcharang/github-pages-deploy-action@3.7.1
       env:
         ACCESS_TOKEN: ${{ secrets.GH_TOKEN }}
